@@ -1,0 +1,54 @@
+
+  <div class="container-fluid text-start">
+    <a href="index.html" class="myLink">
+      <i class="bi bi-house-fill"></i>&nbsp;&nbsp;กลับหน้าแรก
+    </a>  
+  </div>
+
+  <hr>
+
+  <h2>แดชบอร์ดผลสำรวจระดับความสุขของผู้สูงอายุในประเทศไทย</h2>
+  <div id="chart-container">
+
+    <!-- Dropdown Filters -->
+    <div class="row mb-4">
+      <div class="col-md-4">
+          <label for="yearSelect" class="form-label">เลือกปี</label>
+          <select id="yearSelect" class="form-select"></select>
+      </div>
+      <div class="col-md-4">
+          <label for="regionSelect" class="form-label">เลือกภาค</label>
+          <select id="regionSelect" class="form-select"></select>
+      </div>
+      <div class="col-sm-4 d-flex align-items-middle">
+        <button class="btn highlight w-100 text-aling-center" onclick="exportToCSV()">
+          <i class="bi bi-download"></i>&nbsp;&nbsp;ดาวน์โหลดไฟล์ CSV ไปใช้งาน ฟรี!!!
+        </button>
+      </div>
+    </div>
+  
+    <!-- Charts Row -->
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card p-3">
+                <h5 class="text-center">เปรียบระดับความสุขผู้สูงวัยในแต่ละภูมิภาค</h5>
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card p-3">
+              <h5 class="text-center">แนวโน้มระดับความสุขใน 7 ปีที่ผ่านมา</h5>
+              <canvas id="lineChart"></canvas>
+          </div>
+      </div>
+        <div class="col-md-6 mb-4">
+            <div class="card p-3">
+                <h5 class="text-center">ระดับความสุขในแต่ละภูมิภาค</h5>
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+    </div>
+  
+  </div>
+
+

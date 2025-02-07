@@ -1,0 +1,11 @@
+{% load static %}
+<!-- Left Menu -->
+<div class="sidebar">
+  <ul>
+    <li><a class="myLink" href="#" 
+          onclick="loadPageElderly('{% static 'html/elder_dashboard.html' %}'); return false;">Dashboard</a></li>
+    <li><a href="#" class="myLink" onclick="loadGraph('static/dataset/sales.csv')">Sales Data</a></li>
+    <li><a href="#" class="myLink" onclick="loadGraph('static/dataset/market.csv')">Market Trends</a></li>
+    <li><a href="#" class="myLink" onclick="loadPage('static/html/chartTickGrid.html'); return false;" >Animate and Grid Chart</a></li>
+</ul>
+</div>
