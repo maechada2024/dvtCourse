@@ -1,0 +1,187 @@
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {
+  background: #FFF8E7;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 16pt;
+  margin: 0; 
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.header, .footer { 
+  width: 100%; 
+  height: 120px;
+  text-align: center; 
+  padding: 20px; 
+  background: #6F4E37;
+  color: #FFF8E7;
+  margin: 0px;
+  padding: 10px;
+}
+
+h1, h2, h3 {
+  font-family: 'Mitr', sans-serif;
+  color: #6F4E37;
+}
+
+p {
+  text-align: justify;
+}
+
+.disabled { pointer-events: none; opacity: 0.3; }
+a.myLink {text-decoration: none;}
+a.myLink:active {color:#6F4E37;}
+a.myLink:disabled {color:#FFF8E7;}
+a.myLink:link {color: #6F4E37;}
+a.myLink:visited {color: #6F4E37;}
+a.myLink:hover {background: #F5DEB3; color:#6F4E37; font-size: 1.1em;}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  border-bottom: 1px solid #FFF8E7; 
+  font-size: 14pt;
+}
+
+ul li {
+  padding: 8px 16px;
+  border-bottom: 1px solid #FFF8E7;
+}
+
+ul li:last-child {
+  border-bottom: none
+}
+
+.centerText {
+  text-align: center;
+}
+
+.centerBox {
+  background-color: #6F4E37;
+  text-align: center;
+  width: 213px;
+  padding: 10px;
+}
+
+.caramel {
+  height: 300px;
+  background-color: #F5DEB3;
+}
+
+.coffee {
+  height: 200px;
+  background-color: #D2B48C;
+}
+
+.coffeeMilk {
+  height: 400px;
+  background-color: #A67B5B;
+}
+
+.NavMenu {
+  background: #6F4E37;
+  color: #FFF8E7;
+}
+
+.menuBar {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  background: #F5DEB3;
+  color: #6F4E37;
+  border: 5px solid #FFF8E7;
+}
+
+.brandBar {
+  background: #F5DEB3;
+  color: #6F4E37;
+}
+
+.rightContent {
+  width: 80%; 
+  padding: 20px; 
+  /* text-align: center; */
+  border: 5px solid #FFF8E7;
+}
+
+.highlight {
+  background-color: #6F4E37; 
+  color:#FFF8E7; 
+}
+
+.chart {
+  width: 100%;
+  height: 400px;
+}
+
+.container { 
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+  border: 0px solid #6F4E37;
+}
+
+.sidebar { 
+  width: 20%; 
+  padding: 0px; 
+  margin: 0px; 
+  border: 0px;
+  background: #F5DEB3; 
+  color: #6F4E37; 
+
+}
+.content { 
+  flex-wrap: 1; /* Takes remaining space */
+  width: 80%; 
+  padding: 10px; 
+  text-align: center; 
+}
+
+.chart-container { width: 90%; margin: auto; }
+.card { box-shadow: 0px 4px 10px rgba(0,0,0,0.1); border-radius: 10px; }
+
+canvas { 
+  max-width: 100%; 
+  width: 100% !important;
+  height: auto !important;
+}
+svg { display: block; margin: auto; }
+select {
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 10px; 
+}
+
+ิbutton {
+  margin-top: 10px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) { 
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar, .content { 
+    width: 100%; 
+  }
+}

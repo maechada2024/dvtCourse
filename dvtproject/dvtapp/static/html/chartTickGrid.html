@@ -1,0 +1,93 @@
+
+<div id="chart-container">
+    <style>
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: black;
+        shape-rendering: crispEdges;
+      }
+
+      .grid line {
+        stroke: black;
+        stroke-opacity: 1;
+        shape-rendering: crispEdges;
+      }
+
+      .grid path {
+        stroke-width: 0;
+      }
+    </style>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+      function renderChart() {
+
+        const data = [
+          { category: "A", value: 20 },
+          { category: "B", value: 40 },
+          { category: "C", value: 65 },
+          { category: "D", value: 85 },
+          { category: "E", value: 18 },
+          { category: "F", value: 75 }
+        ];
+
+        const width = 600;
+        const height = 400;
+        const margin = { top: 20, right: 30, bottom: 50, left: 50 };
+        d3.select("#chart-container").select("svg").remove(); // Remove existing chart before loading new one
+        const svg = d3.select("#chart-container").append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+          .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        const xScale = d3.scaleBand()
+          .domain(data.map(d => d.category))
+          .range([0, width])
+          .padding(0.2);
+
+        const maxValue = d3.max(data, d => d.value);
+        const roundedMax = Math.ceil(maxValue / 100) * 100; // Round up to nearest 100
+
+        const yScale = d3.scaleLinear()
+          .domain([0, roundedMax])
+          .range([height, 0]);
+
+        const xAxis = d3.axisBottom(xScale);
+        const yAxis = d3.axisLeft(yScale).ticks(10);
+
+        svg.append("g")
+          .attr("class", "x axis")
+          .attr("transform", `translate(0,${height})`)
+          .call(xAxis);
+
+        svg.append("g")
+          .attr("class", "y axis")
+          .call(yAxis);
+
+        svg.append("g")
+          .attr("class", "grid")
+          .call(d3.axisLeft(yScale)
+            .tickSize(-width)
+            .tickFormat(""));
+
+        svg.selectAll("rect")
+          .data(data)
+          .enter()
+          .append("rect")
+          .attr("x", d => xScale(d.category))
+          .attr("y", height)
+          .attr("width", xScale.bandwidth())
+          .attr("height", 0)
+          .attr("fill", "tan")
+          .transition()
+          .duration(1000)
+          .attr("y", d => yScale(d.value))
+          .attr("height", d => height - yScale(d.value));
+      } 
+
+      renderChart()
+  </script>
+</div>
+
