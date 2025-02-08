@@ -21,10 +21,11 @@ function initializeDashboard(csvFile) {
             d["Agree"] = +d["Agree"];
             d["Strongly Agree"] = +d["Strongly Agree"];
         });
-
-        csvData = data; // Store globally
-        populateDropdowns(); // Populate the dropdowns
-        updateCharts(); // Render initial charts
+        if (!Object.is(csvData, null)) {
+            csvData = data; // Store globally
+            populateDropdowns(); // Populate the dropdowns
+            updateCharts(); // Render initial charts
+        }
     }).catch(error => console.error("Error reading CSV: ", error));
 }
 

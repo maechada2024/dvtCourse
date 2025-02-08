@@ -1,11 +1,12 @@
 {% load static %}
 <!-- Left Menu -->
-<div class="sidebar">
+<div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="background: #F5DEB3 !important;">
   <ul>
+    <li><a href="index.html" class="myLink">2D Chart-Animate and Tooltips</a></li>
     <li><a class="myLink" href="#" 
           onclick="loadPageElderly('{% static 'html/elder_dashboard.html' %}'); return false;">Dashboard</a></li>
-    <li><a href="#" class="myLink" onclick="loadGraph('static/dataset/sales.csv')">Sales Data</a></li>
-    <li><a href="#" class="myLink" onclick="loadGraph('static/dataset/market.csv')">Market Trends</a></li>
+    <li><a href="#" class="myLink" onclick="loadPage('static/html/transition-sale.html'); return false;" >Transition-Sale</a></li>
+    <li><a href="#" class="myLink" onclick="loadPage('static/html/transition-market.html'); return false;" >Transition-Market</a></li>
     <li><a href="#" class="myLink" onclick="loadPage('static/html/chartTickGrid.html'); return false;" >Animate and Grid Chart</a></li>
 </ul>
 </div>

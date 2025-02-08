@@ -96,7 +96,7 @@ ul li:last-child {
 }
 
 .menuBar {
-  width: 20%; 
+  width: 100%;
   padding: 0px;
   margin: 0px;
   background: #F5DEB3;
